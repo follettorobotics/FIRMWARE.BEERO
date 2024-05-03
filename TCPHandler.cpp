@@ -27,8 +27,16 @@ void TCPHandler::messageHandle(){
             request[requestSize++] = data; 
         }
     }
-   
-    Dispatcher& dispatch = Dispatcher::getInstance();
+    
+    if (requestSize != 0){
+        Dispatcher& dispatch = Dispatcher::getInstance();
+
+        byte response[20];
+        size_t responseSize = 0;
+
+        responseSize = dispatch.dispatch(request, requestSize, response);
+        sendMessageToClient(response, responseSize); 
+    }
 
 }
 
