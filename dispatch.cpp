@@ -49,7 +49,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         response[responseIndex++] = endByte;
         
         return responseIndex; 
-    }else if (request[index] == relayHandlerRspCommand){
+    }else if (request[index] == relayHandlerReqCommand){
         // relay 
         index++; 
 
@@ -85,7 +85,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         delete(relayHandler); 
         return responseIndex;
 
-    }else if (request[index] == motorRunRspCommand){
+    }else if (request[index] == motorRunReqCommand){
         // external motor 
         index++;
 
