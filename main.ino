@@ -7,6 +7,7 @@
 #include "TCPHandler.h"
 #include "RelayHandler.h"
 #include "SensorHandler.h"
+#include "MotorHandler.h"
 
 #define SERVER_PORT 502
 #define sspin       53
@@ -29,8 +30,8 @@ void setup()
     RelaySetup::initializePins(); 
 
     // motor initial
-    
-
+    Serial.println("motor");
+    MotorSetup::initializePins(); 
 }
 
 void loop()

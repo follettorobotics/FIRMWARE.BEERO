@@ -40,7 +40,6 @@ public:
         if (controlTime != 0){
             // time control 
             startTime = millis();
-            digitalWrite(relayPin, true); 
         }else{
             // ON, OFF control 
             digitalWrite(relayPin, on); 

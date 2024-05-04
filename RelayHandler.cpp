@@ -2,18 +2,14 @@
 
 bool RelayHandler::execute(){
 
-    unsigned long currentTime = millis();
-    unsigned long realTimeVal = currentTime - startTime; 
-    if (realTimeVal >= controlTime){
-        // stop timing 
+    if (controlTime != 0){
+        digitalWrite(relayPin, true);
+        delay(controlTime); 
         digitalWrite(relayPin, false);
-        // real time value set 
-        setRealTime(realTimeVal); 
-
+        return true; 
+    }else{
         return true; 
     }
-
-    return false; 
 
 }
 
@@ -26,16 +22,16 @@ size_t RelayHandler::response(byte* relayControlRsp){
     relayControlRsp[index++] = getRelayNumber();
 
     // get relay control (real time) 
-    unsigned long realTimeVal = getRealTime();
+    if (controlTime != 0){
+        unsigned long realTimeVal = getRealTime();
+        // split the time 
+        byte* integerByte;
+        byte* fractionByte;
 
-    // split the time 
-    byte* integerByte;
-    byte* fractionByte;
-
-    decimalToHex(realTimeVal, integerByte, fractionByte);
-
-    relayControlRsp[index++] = *integerByte;
-    relayControlRsp[index++] = *fractionByte;
+        decimalToHex(controlTime, integerByte, fractionByte);
+        relayControlRsp[index++] = *integerByte;
+        relayControlRsp[index++] = *fractionByte;
+    }
 
     relayControlRsp[index++] = endByte;
 
