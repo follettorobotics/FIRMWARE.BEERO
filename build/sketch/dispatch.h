@@ -1,3 +1,4 @@
+#line 1 "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\dispatch.h"
 #ifndef DISPATCHER_H
 #define DISPATCHER_H
 
