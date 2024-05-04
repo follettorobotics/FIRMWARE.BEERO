@@ -3,6 +3,7 @@
 
 #include <Ethernet.h>
 #include "dispatch.h"
+#include "BitStuffing.h"
 
 
 // TCPHandler singleton pattern 
