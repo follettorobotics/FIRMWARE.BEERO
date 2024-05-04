@@ -37,6 +37,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         // sensor read
         // call class SensorHandler
         SensorHandler& sensorHandler = SensorHandler::getInstance();
+        sensorHandler.execute();
         uint16_t sensorValue = sensorHandler.getSensorValue();
         byte sensorLw = sensorValue & 0xFF;
         byte sensorUp = (sensorValue >> 8) & 0xFF;
