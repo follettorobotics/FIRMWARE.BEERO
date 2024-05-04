@@ -20,6 +20,7 @@ private:
 public:
 
     static TCPHandler& getInstance();
+    void begin(byte mac[], IPAddress ip);
     void clientHandle(); 
     void messageHandle();
     bool sendMessageToClient(const byte *message, size_t size);

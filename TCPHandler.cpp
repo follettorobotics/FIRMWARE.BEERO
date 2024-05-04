@@ -1,5 +1,18 @@
 #include "TCPHandler.h"
 
+uint16_t TCPHandler::port = 502;
+
+TCPHandler& TCPHandler::getInstance(){
+    static TCPHandler instance;
+    return instance;
+}
+
+void TCPHandler::begin(byte mac[], IPAddress ip){
+    Ethernet.begin(mac, ip);
+    TCPserver.begin();
+}
+
+
 void TCPHandler::clientHandle(){
     EthernetClient newClient = TCPserver.available();
 

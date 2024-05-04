@@ -15,11 +15,19 @@
 IPAddress ip(192, 168, 0, 141);
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED }; 
 
+TCPHandler& tcpHandler = TCPHandler::getInstance();
+
 void setup()
 {
 	Serial.begin(115200);
     Ethernet.init(sspin);
-    Ethernet.begin(mac, ip);
+    
+    // Ethernet and TCPserver starts
+    tcpHandler.begin(mac, ip);
+    Serial.println("tcp handler");
+    
+    Serial.print("IP: ");
+    Serial.println(ip);
 
     // sensor initial
     SensorHandler& sensorHandler = SensorHandler::getInstance();
