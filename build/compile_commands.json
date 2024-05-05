@@ -1,8 +1,8 @@
 [
  {
-  "directory": "c:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO",
+  "directory": "c:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO",
   "arguments": [
-   "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+   "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
    "-g",
    "-Os",
@@ -21,20 +21,20 @@
    "-DARDUINO=10607",
    "-DARDUINO_AVR_MEGA2560",
    "-DARDUINO_ARCH_AVR",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\cores\\arduino",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\variants\\mega",
-   "-IC:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\BItStuffing.cpp",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega",
+   "-IC:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\FIRMWARE.BEERO.ino.cpp",
    "-o",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\BItStuffing.cpp.o"
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\FIRMWARE.BEERO.ino.cpp.o"
   ],
-  "file": "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\BItStuffing.cpp"
+  "file": "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\FIRMWARE.BEERO.ino.cpp"
  },
  {
-  "directory": "c:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO",
+  "directory": "c:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO",
   "arguments": [
-   "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+   "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
    "-g",
    "-Os",
@@ -53,20 +53,20 @@
    "-DARDUINO=10607",
    "-DARDUINO_AVR_MEGA2560",
    "-DARDUINO_ARCH_AVR",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\cores\\arduino",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\variants\\mega",
-   "-IC:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\FIRMWARE.BEERO.ino.cpp",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega",
+   "-IC:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\BItStuffing.cpp",
    "-o",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\FIRMWARE.BEERO.ino.cpp.o"
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\BItStuffing.cpp.o"
   ],
-  "file": "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\FIRMWARE.BEERO.ino.cpp"
+  "file": "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\BItStuffing.cpp"
  },
  {
-  "directory": "c:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO",
+  "directory": "c:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO",
   "arguments": [
-   "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+   "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
    "-g",
    "-Os",
@@ -85,20 +85,20 @@
    "-DARDUINO=10607",
    "-DARDUINO_AVR_MEGA2560",
    "-DARDUINO_ARCH_AVR",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\cores\\arduino",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\variants\\mega",
-   "-IC:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\RelayHandler.cpp",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega",
+   "-IC:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\RelayHandler.cpp",
    "-o",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\RelayHandler.cpp.o"
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\RelayHandler.cpp.o"
   ],
-  "file": "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\RelayHandler.cpp"
+  "file": "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\RelayHandler.cpp"
  },
  {
-  "directory": "c:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO",
+  "directory": "c:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO",
   "arguments": [
-   "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+   "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
    "-g",
    "-Os",
@@ -117,20 +117,20 @@
    "-DARDUINO=10607",
    "-DARDUINO_AVR_MEGA2560",
    "-DARDUINO_ARCH_AVR",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\cores\\arduino",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\variants\\mega",
-   "-IC:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\dispatch.cpp",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega",
+   "-IC:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\MotorHandler.cpp",
    "-o",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\dispatch.cpp.o"
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\MotorHandler.cpp.o"
   ],
-  "file": "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\dispatch.cpp"
+  "file": "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\MotorHandler.cpp"
  },
  {
-  "directory": "c:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO",
+  "directory": "c:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO",
   "arguments": [
-   "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+   "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
    "-g",
    "-Os",
@@ -149,20 +149,20 @@
    "-DARDUINO=10607",
    "-DARDUINO_AVR_MEGA2560",
    "-DARDUINO_ARCH_AVR",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\cores\\arduino",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\variants\\mega",
-   "-IC:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\SensorHandler.cpp",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega",
+   "-IC:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\TCPHandler.cpp",
    "-o",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\SensorHandler.cpp.o"
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\TCPHandler.cpp.o"
   ],
-  "file": "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\SensorHandler.cpp"
+  "file": "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\TCPHandler.cpp"
  },
  {
-  "directory": "c:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO",
+  "directory": "c:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO",
   "arguments": [
-   "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+   "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
    "-g",
    "-Os",
@@ -181,20 +181,20 @@
    "-DARDUINO=10607",
    "-DARDUINO_AVR_MEGA2560",
    "-DARDUINO_ARCH_AVR",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\cores\\arduino",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\variants\\mega",
-   "-IC:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\MotorHandler.cpp",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega",
+   "-IC:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\SensorHandler.cpp",
    "-o",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\MotorHandler.cpp.o"
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\SensorHandler.cpp.o"
   ],
-  "file": "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\MotorHandler.cpp"
+  "file": "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\SensorHandler.cpp"
  },
  {
-  "directory": "c:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO",
+  "directory": "c:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO",
   "arguments": [
-   "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+   "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
    "-g",
    "-Os",
@@ -213,20 +213,20 @@
    "-DARDUINO=10607",
    "-DARDUINO_AVR_MEGA2560",
    "-DARDUINO_ARCH_AVR",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\cores\\arduino",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\variants\\mega",
-   "-IC:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\TCPHandler.cpp",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega",
+   "-IC:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\dispatch.cpp",
    "-o",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\TCPHandler.cpp.o"
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\dispatch.cpp.o"
   ],
-  "file": "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\TCPHandler.cpp"
+  "file": "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\sketch\\dispatch.cpp"
  },
  {
-  "directory": "c:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO",
+  "directory": "c:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO",
   "arguments": [
-   "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+   "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
    "-g",
    "-Os",
@@ -245,20 +245,20 @@
    "-DARDUINO=10607",
    "-DARDUINO_AVR_MEGA2560",
    "-DARDUINO_ARCH_AVR",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\cores\\arduino",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\variants\\mega",
-   "-IC:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src",
-   "C:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src\\utility\\w5100.cpp",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega",
+   "-IC:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
+   "C:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src\\Dhcp.cpp",
    "-o",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\libraries\\Ethernet\\utility\\w5100.cpp.o"
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\libraries\\Ethernet\\Dhcp.cpp.o"
   ],
-  "file": "C:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src\\utility\\w5100.cpp"
+  "file": "C:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src\\Dhcp.cpp"
  },
  {
-  "directory": "c:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO",
+  "directory": "c:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO",
   "arguments": [
-   "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+   "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
    "-g",
    "-Os",
@@ -277,20 +277,20 @@
    "-DARDUINO=10607",
    "-DARDUINO_AVR_MEGA2560",
    "-DARDUINO_ARCH_AVR",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\cores\\arduino",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\variants\\mega",
-   "-IC:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src",
-   "C:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src\\Dns.cpp",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega",
+   "-IC:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
+   "C:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src\\EthernetClient.cpp",
    "-o",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\libraries\\Ethernet\\Dns.cpp.o"
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\libraries\\Ethernet\\EthernetClient.cpp.o"
   ],
-  "file": "C:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src\\Dns.cpp"
+  "file": "C:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src\\EthernetClient.cpp"
  },
  {
-  "directory": "c:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO",
+  "directory": "c:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO",
   "arguments": [
-   "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+   "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
    "-g",
    "-Os",
@@ -309,20 +309,20 @@
    "-DARDUINO=10607",
    "-DARDUINO_AVR_MEGA2560",
    "-DARDUINO_ARCH_AVR",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\cores\\arduino",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\variants\\mega",
-   "-IC:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src",
-   "C:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src\\Dhcp.cpp",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega",
+   "-IC:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
+   "C:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src\\Dns.cpp",
    "-o",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\libraries\\Ethernet\\Dhcp.cpp.o"
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\libraries\\Ethernet\\Dns.cpp.o"
   ],
-  "file": "C:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src\\Dhcp.cpp"
+  "file": "C:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src\\Dns.cpp"
  },
  {
-  "directory": "c:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO",
+  "directory": "c:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO",
   "arguments": [
-   "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+   "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
    "-g",
    "-Os",
@@ -341,20 +341,20 @@
    "-DARDUINO=10607",
    "-DARDUINO_AVR_MEGA2560",
    "-DARDUINO_ARCH_AVR",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\cores\\arduino",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\variants\\mega",
-   "-IC:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src",
-   "C:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src\\EthernetClient.cpp",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega",
+   "-IC:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
+   "C:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src\\EthernetServer.cpp",
    "-o",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\libraries\\Ethernet\\EthernetClient.cpp.o"
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\libraries\\Ethernet\\EthernetServer.cpp.o"
   ],
-  "file": "C:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src\\EthernetClient.cpp"
+  "file": "C:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src\\EthernetServer.cpp"
  },
  {
-  "directory": "c:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO",
+  "directory": "c:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO",
   "arguments": [
-   "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+   "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
    "-g",
    "-Os",
@@ -373,20 +373,20 @@
    "-DARDUINO=10607",
    "-DARDUINO_AVR_MEGA2560",
    "-DARDUINO_ARCH_AVR",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\cores\\arduino",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\variants\\mega",
-   "-IC:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src",
-   "C:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src\\socket.cpp",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega",
+   "-IC:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
+   "C:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src\\Ethernet.cpp",
    "-o",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\libraries\\Ethernet\\socket.cpp.o"
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\libraries\\Ethernet\\Ethernet.cpp.o"
   ],
-  "file": "C:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src\\socket.cpp"
+  "file": "C:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src\\Ethernet.cpp"
  },
  {
-  "directory": "c:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO",
+  "directory": "c:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO",
   "arguments": [
-   "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+   "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
    "-g",
    "-Os",
@@ -405,20 +405,20 @@
    "-DARDUINO=10607",
    "-DARDUINO_AVR_MEGA2560",
    "-DARDUINO_ARCH_AVR",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\cores\\arduino",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\variants\\mega",
-   "-IC:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src",
-   "C:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src\\EthernetServer.cpp",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega",
+   "-IC:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
+   "C:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src\\EthernetUdp.cpp",
    "-o",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\libraries\\Ethernet\\EthernetServer.cpp.o"
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\libraries\\Ethernet\\EthernetUdp.cpp.o"
   ],
-  "file": "C:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src\\EthernetServer.cpp"
+  "file": "C:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src\\EthernetUdp.cpp"
  },
  {
-  "directory": "c:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO",
+  "directory": "c:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO",
   "arguments": [
-   "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+   "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
    "-g",
    "-Os",
@@ -437,20 +437,20 @@
    "-DARDUINO=10607",
    "-DARDUINO_AVR_MEGA2560",
    "-DARDUINO_ARCH_AVR",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\cores\\arduino",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\variants\\mega",
-   "-IC:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src",
-   "C:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src\\EthernetUdp.cpp",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega",
+   "-IC:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
+   "C:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src\\socket.cpp",
    "-o",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\libraries\\Ethernet\\EthernetUdp.cpp.o"
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\libraries\\Ethernet\\socket.cpp.o"
   ],
-  "file": "C:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src\\EthernetUdp.cpp"
+  "file": "C:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src\\socket.cpp"
  },
  {
-  "directory": "c:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO",
+  "directory": "c:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO",
   "arguments": [
-   "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+   "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
    "-g",
    "-Os",
@@ -469,20 +469,20 @@
    "-DARDUINO=10607",
    "-DARDUINO_AVR_MEGA2560",
    "-DARDUINO_ARCH_AVR",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\cores\\arduino",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\variants\\mega",
-   "-IC:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src",
-   "C:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src\\Ethernet.cpp",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega",
+   "-IC:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
+   "C:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src\\utility\\w5100.cpp",
    "-o",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\libraries\\Ethernet\\Ethernet.cpp.o"
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\libraries\\Ethernet\\utility\\w5100.cpp.o"
   ],
-  "file": "C:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src\\Ethernet.cpp"
+  "file": "C:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src\\utility\\w5100.cpp"
  },
  {
-  "directory": "c:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO",
+  "directory": "c:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO",
   "arguments": [
-   "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
+   "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
    "-c",
    "-g",
    "-Os",
@@ -501,14 +501,14 @@
    "-DARDUINO=10607",
    "-DARDUINO_AVR_MEGA2560",
    "-DARDUINO_ARCH_AVR",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\cores\\arduino",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\variants\\mega",
-   "-IC:\\Users\\Owner\\OneDrive\\문서\\Arduino\\libraries\\Ethernet\\src",
-   "-IC:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src",
-   "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src\\SPI.cpp",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega",
+   "-IC:\\Users\\escap\\Documents\\Arduino\\libraries\\Ethernet\\src",
+   "-IC:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src",
+   "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src\\SPI.cpp",
    "-o",
-   "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\libraries\\SPI\\SPI.cpp.o"
+   "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\build\\libraries\\SPI\\SPI.cpp.o"
   ],
-  "file": "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src\\SPI.cpp"
+  "file": "C:\\Users\\escap\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src\\SPI.cpp"
  }
 ]

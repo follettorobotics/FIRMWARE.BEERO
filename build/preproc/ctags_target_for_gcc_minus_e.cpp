@@ -1,14 +1,14 @@
-# 1 "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino"
-# 2 "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
-# 3 "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
-# 4 "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
-# 5 "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
-# 6 "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
+# 1 "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino"
+# 2 "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
+# 3 "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
+# 4 "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
+# 5 "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
+# 6 "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
 
-# 8 "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
-# 9 "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
-# 10 "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
-# 11 "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
+# 8 "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
+# 9 "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
+# 10 "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
+# 11 "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino" 2
 
 
 

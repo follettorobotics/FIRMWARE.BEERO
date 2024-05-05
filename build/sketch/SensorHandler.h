@@ -1,4 +1,4 @@
-#line 1 "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\SensorHandler.h"
+#line 1 "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\SensorHandler.h"
 #ifndef SENSORHANDLER_H 
 #define SENSORHANDLER_H
 

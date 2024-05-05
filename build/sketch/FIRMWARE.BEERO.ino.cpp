@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#line 1 "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino"
+#line 1 "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino"
 #include <Ethernet.h>
 #include <SPI.h>
 #include <Dns.h>
@@ -19,11 +19,11 @@ byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 
 TCPHandler& tcpHandler = TCPHandler::getInstance();
 
-#line 20 "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino"
+#line 20 "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino"
 void setup();
-#line 45 "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino"
+#line 45 "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino"
 void loop();
-#line 20 "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino"
+#line 20 "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino"
 void setup()
 {
 	Serial.begin(115200);

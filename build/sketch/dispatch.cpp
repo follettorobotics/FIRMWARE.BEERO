@@ -1,4 +1,4 @@
-#line 1 "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\dispatch.cpp"
+#line 1 "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\dispatch.cpp"
 #include "dispatch.h"
 
 Dispatcher::Dispatcher() {
