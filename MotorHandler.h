@@ -81,7 +81,25 @@ public:
         }else{
             digitalWrite(dirPin, false);
         }
+
+        Serial.print("motor number: ");
+        Serial.println(motorNumber);
+
+        Serial.print("motorDir: ");
+        Serial.println(motorDir);
+
+        Serial.print("motorStep: ");
+        Serial.println(motorStep);
+
+        Serial.print("motorAddStep: ");
+        Serial.println(motorAddStep);
+
+        Serial.print("relayBrake: ");
+        Serial.println(relayBrake);
         
+
+        Serial.print("sensorLimit: ");
+        Serial.println(sensorLimit);
     }
 
     bool execute(); 

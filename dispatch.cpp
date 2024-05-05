@@ -87,6 +87,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
 
     }else if (request[index] == motorRunReqCommand){
         // external motor 
+        Serial.println("motor_run");
         index++;
 
         byte motorNumber = request[index++];
@@ -145,6 +146,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         }
 
         // motor class
+        Serial.println("motor run execute"); 
         MotorHandler* motorHandler = new MotorHandler(motorNumber, motorDir, motorStep, motorAdd, relayBrake, sensorLimit); 
         motorHandler->execute(); 
         responseIndex = motorHandler->response(response); 

@@ -2,36 +2,24 @@
 
 // non-concurrency 
 bool MotorHandler::execute(){
+    Serial.println("motor execute start"); 
+    if (relayBrake != 0x00){
+        RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, true); 
+        delete relayHandler; 
+    }
     for (int i=0; i<motorStep; i++){
-        if (i == 0){
-            // motor step 
-            if (relayBrake != 0x00){
-                RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, true); 
-                delete relayHandler; 
-            }
-        }else if (currentStep == motorStep){
-            // when motorStep 
-            if (relayBrake != 0x00){
-                RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
-                delete relayHandler; 
-            }
-        
-        }
-
         if ((sensorLimit < 16)){
             if (!sensor){
                 if (getSensorLimitValue(sensorLimit)){
                     sensor = true; 
+                    Serial.println("sensor limit on"); 
                 }
             }else{
                 if (motorAddStep != 0){
                     // additional step exists
                     motorAddStep--; 
                 }else{
-                    if (relayBrake != 0x00){
-                        RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
-                        delete relayHandler; 
-                    }
+                    Serial.println("motor run end (add step)");
                     break; 
                 }
             }
@@ -40,9 +28,16 @@ bool MotorHandler::execute(){
         digitalWrite(pwmPin, true);
         currentStep++; 
         digitalWrite(pwmPin, false);
-        delayMicroseconds(0.5); 
+        delay(1); 
     }
 
+    if (relayBrake != 0x00){
+        Serial.println("relay off timing"); 
+        RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
+        delete relayHandler; 
+    }
+
+    Serial.println("motor execute end"); 
     return true; 
 }
 
@@ -50,12 +45,19 @@ bool MotorHandler::getSensorLimitValue(uint8_t sensorLimit){
     SensorHandler& sensorHandler = SensorHandler::getInstance();
     sensorHandler.execute(); 
     uint16_t sensorValue = sensorHandler.getSensorValue();
+    Serial.print("sensor Value: "); 
+    Serial.println(sensorValue);
+
+    Serial.print("sensorLimit: "); 
+    Serial.println(sensorLimit);
 
     bool isBit = (sensorValue >> sensorLimit) & 1; 
 
     if (sensorLimit == 0 || sensorLimit == 1 || sensorLimit == 2){
         return isBit==0; 
     }else{
+        Serial.println("sensor value check");
+        Serial.println(isBit); 
         return isBit==1; 
     }
 }

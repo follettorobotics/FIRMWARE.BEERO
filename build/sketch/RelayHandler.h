@@ -45,6 +45,8 @@ public:
             startTime = millis();
         }else{
             // ON, OFF control 
+            Serial.println("on / off");
+            Serial.println(on); 
             digitalWrite(relayPin, on); 
         }
  

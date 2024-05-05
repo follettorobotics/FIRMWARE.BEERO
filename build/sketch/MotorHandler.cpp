@@ -3,18 +3,22 @@
 
 // non-concurrency 
 bool MotorHandler::execute(){
+  Serial.println("motor execute start"); 
     for (int i=0; i<motorStep; i++){
         if (i == 0){
             // motor step 
+            Serial.println("motor step 0");
             if (relayBrake != 0x00){
                 RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, true); 
                 delete relayHandler; 
             }
         }else if (currentStep == motorStep){
             // when motorStep 
+            Serial.println("motor run end");
             if (relayBrake != 0x00){
                 RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
                 delete relayHandler; 
+                break; 
             }
         
         }
@@ -29,6 +33,7 @@ bool MotorHandler::execute(){
                     // additional step exists
                     motorAddStep--; 
                 }else{
+                    Serial.println("motor run end (add step)");
                     if (relayBrake != 0x00){
                         RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
                         delete relayHandler; 
@@ -44,6 +49,7 @@ bool MotorHandler::execute(){
         delayMicroseconds(0.5); 
     }
 
+    Serial.println("motor execute end"); 
     return true; 
 }
 
