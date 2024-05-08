@@ -48,7 +48,7 @@ bool MotorHandler::getSensorLimitValue(uint8_t sensorLimit){
     Serial.print("sensor Value: "); 
     Serial.println(sensorValue);
 
-    Serial.print("sensorLimit: "); 
+    Serial.print("sensorLimit: ");  
     Serial.println(sensorLimit);
 
     bool isBit = (sensorValue >> sensorLimit) & 1; 

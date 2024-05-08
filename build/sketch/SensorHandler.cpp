@@ -29,6 +29,7 @@ bool SensorHandler::execute(){
     digitalWrite(LOAD, HIGH);
     
     uint16_t temp = 0;
+    sensor_value = 0; 
 
     for (int i=0; i<16; i++){
         int value = digitalRead(DIN);
@@ -37,6 +38,8 @@ bool SensorHandler::execute(){
         digitalWrite(CLK, LOW);
     }
     sensor_value = temp;
+    Serial.print("sensor value: ");
+    Serial.println(sensor_value);
 
     return false;
 }
