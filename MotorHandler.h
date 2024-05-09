@@ -70,7 +70,7 @@ public:
 
     MotorHandler(int motorNumber, uint8_t motorDir, uint16_t motorStep, 
         uint16_t motorAddStep, uint8_t relayBrake, uint8_t sensorLimit):
-    motorNumber(motorNumber-1), motorDir(motorDir), motorStep(motorStep), 
+    motorNumber(motorNumber), motorDir(motorDir), motorStep(motorStep), 
     motorAddStep(motorAddStep), relayBrake(relayBrake), sensorLimit(sensorLimit){
 
         dirPin = exMotorPinAddress[motorNumber].DIR;

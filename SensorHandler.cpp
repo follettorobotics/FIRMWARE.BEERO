@@ -37,8 +37,6 @@ bool SensorHandler::execute(){
         digitalWrite(CLK, LOW);
     }
     sensor_value = temp;
-    Serial.print("sensor value: ");
-    Serial.println(sensor_value);
 
     return false;
 }

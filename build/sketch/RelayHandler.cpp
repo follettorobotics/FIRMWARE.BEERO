@@ -9,6 +9,7 @@ bool RelayHandler::execute(){
         digitalWrite(relayPin, false);
         return true; 
     }else{
+        digitalWrite(relayPin, false);
         return true; 
     }
 

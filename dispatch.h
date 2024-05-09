@@ -17,17 +17,20 @@
 #define sensorReandReqCommand       0xB0 
 #define relayHandlerReqCommand      0xB1
 #define motorRunReqCommand          0xB2
+#define relayOnOffReqCommand        0xB3
 
 // Response 
 #define sensorReadRspCommand        0xC0
 #define relayHandlerRspCommand      0xC1
 #define motorRunRspCommand          0XC2
+#define relayOnOffRspCommand        0xC3
 
 // Error code command
 #define startByteErrorCommand       0xE0
 #define endByteErrorCommand         0xE1
 #define relayHandlerErrorCommand    0xE2
 #define motorRunErrorCommand        0xE3
+#define relayOnOffErrorCommand      0xE4
 
 #define nonExistErrorCommand        0xEA
 
@@ -37,10 +40,15 @@
 #define relayBrakeErrorByte         0xD2
 #define motorDirErrorByte           0xD4
 #define SensorLimitErrorByte        0xD5
+#define relayControlErrorByte       0xD6
 
 // motor direction
 #define doorOpen                    0x00
 #define doorClose                   0xff
+
+// relay ON OFF
+#define relayOn                     0x01
+#define relayOff                    0x00
 
 class Dispatcher {
 private:

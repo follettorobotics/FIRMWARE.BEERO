@@ -42,11 +42,8 @@ public:
         relayPin = relayPins[relayNumber-1];
         if (controlTime != 0){
             // time control 
-            startTime = millis();
         }else{
             // ON, OFF control 
-            Serial.println("on / off");
-            Serial.println(on); 
             digitalWrite(relayPin, on); 
         }
  

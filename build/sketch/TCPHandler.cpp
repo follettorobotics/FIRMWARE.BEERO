@@ -51,7 +51,7 @@ void TCPHandler::messageHandle(){
         BitStuffing& bitStuffing = BitStuffing::getInstance(); 
         unStuffedReqSize = bitStuffing.removeBitStuffing(request, requestSize, unStuffedReq);
 
-        byte response[20];
+        byte response[20] = {0, };
         size_t responseSize = 0;
 
         responseSize = dispatch.dispatch(unStuffedReq, unStuffedReqSize, response);
@@ -77,6 +77,7 @@ bool TCPHandler::sendMessageToClient(const byte* message, size_t size){
             return true; 
         }
         else{
+            Serial.println("tcp not available to send response message");
             return false; 
         }
     }
