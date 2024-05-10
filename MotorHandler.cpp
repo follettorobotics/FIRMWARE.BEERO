@@ -35,21 +35,24 @@ bool MotorHandler::execute(){
     }
 
     if (errorCheckSensorLimit != 16){
-        errorCheckSensor = (errorCheckSensorLimit);
-
+        errorCheckSensor = getSensorLimitValue(errorCheckSensorLimit);
     }
     return true; 
 }
 
-bool MotorHandler::getSensorLimitValue(uint8_t sensorLimit){
+bool MotorHandler::getSensorLimitValue(uint8_t sensorLimitParameter){
     SensorHandler& sensorHandler = SensorHandler::getInstance();
     sensorHandler.execute(); 
     uint16_t sensorValue = sensorHandler.getSensorValue();
 
-    bool isBit = (sensorValue >> sensorLimit) & 1; 
+    bool isBit = (sensorValue >> sensorLimitParameter) & 1; 
+    // if (sensorLimitParameter == 2){
+    //   Serial.print("cup sensor 1: "); 
+    //   Serial.println(isBit); 
+    // }
 
-    if (sensorLimit == 0 || sensorLimit == 1 || sensorLimit == 2){
-        return isBit==0; 
+    if (sensorLimitParameter > 2){
+        return isBit==1; 
     }else{
         return isBit==1; 
     }
