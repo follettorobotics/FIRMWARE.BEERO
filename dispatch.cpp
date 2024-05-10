@@ -149,9 +149,11 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
             return responseIndex;
         }
 
+        byte errorCheckSensorLimit = request[index++]; 
+
         // motor class
         Serial.println("motor run execute"); 
-        MotorHandler* motorHandler = new MotorHandler(motorNumber, motorDir, motorStep, motorAdd, relayBrake, sensorLimit); 
+        MotorHandler* motorHandler = new MotorHandler(motorNumber, motorDir, motorStep, motorAdd, relayBrake, sensorLimit, errorCheckSensorLimit); 
         motorHandler->execute(); 
         responseIndex = motorHandler->response(response); 
 

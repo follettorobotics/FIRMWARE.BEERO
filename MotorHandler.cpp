@@ -33,6 +33,11 @@ bool MotorHandler::execute(){
         RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
         delete relayHandler; 
     }
+
+    if (errorCheckSensorLimit != 16){
+        errorCheckSensor = (errorCheckSensorLimit);
+
+    }
     return true; 
 }
 
@@ -60,6 +65,7 @@ size_t MotorHandler::response(byte* exMotorControlRsp){
     exMotorControlRsp[rspIndex++] = currentStep & 0xFF;
     exMotorControlRsp[rspIndex++] = (currentStep >> 8) & 0xFF;
     exMotorControlRsp[rspIndex++] = sensor; 
+    exMotorControlRsp[rspIndex++] = errorCheckSensor; 
     exMotorControlRsp[rspIndex++] = endByte;
 
     return rspIndex; 
