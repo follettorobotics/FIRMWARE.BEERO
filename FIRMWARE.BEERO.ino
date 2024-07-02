@@ -8,6 +8,7 @@
 #include "RelayHandler.h"
 #include "SensorHandler.h"
 #include "MotorHandler.h"
+#include "LoadcellHandler.h"
 
 #define SERVER_PORT 502
 #define sspin       53
@@ -40,6 +41,11 @@ void setup()
     // motor initial
     Serial.println("motor");
     MotorSetup::initializePins(); 
+
+    Serial.println("loadcell");
+    for (int i=0; i<3; i++){
+        LoadcellSetup::initializePins(i);
+    }
 }
 
 void loop()

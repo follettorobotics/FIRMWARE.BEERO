@@ -18,6 +18,7 @@
 #define relayHandlerReqCommand      0xB1
 #define motorRunReqCommand          0xB2
 #define relayOnOffReqCommand        0xB3
+#define loadcellReqCommand          0xB4
 
 // Response 
 #define sensorReadRspCommand        0xC0

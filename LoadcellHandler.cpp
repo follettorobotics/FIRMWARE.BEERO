@@ -8,13 +8,8 @@ bool LoadCellHandler::execute() {
     // 로드셀 초기화 및 테어링
     // LoadcellSetup::initializePins(loadcellTarget);
 
-    // 로드셀 값 읽기
+    // read loadcell 
     loadcellValues[loadcellTarget] = scales[loadcellTarget].get_units();
-    Serial.print("Load Cell ");
-    Serial.print(loadcellTarget + 1);
-    Serial.print(": ");
-    Serial.print(loadcellValues[loadcellTarget]);
-    Serial.println(" units ");
     
     delay(10);
 
