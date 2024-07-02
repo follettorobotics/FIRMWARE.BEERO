@@ -236,6 +236,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         delete(loadcellHandler); 
 
         return responseIndex; 
+        
     }else{
         // non request, error occur 
         response[responseIndex++] = startByte;

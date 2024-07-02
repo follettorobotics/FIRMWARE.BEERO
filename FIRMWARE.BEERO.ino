@@ -41,11 +41,6 @@ void setup()
     // motor initial
     Serial.println("motor");
     MotorSetup::initializePins(); 
-
-    Serial.println("loadcell");
-    for (int i=0; i<3; i++){
-        LoadcellSetup::initializePins(i);
-    }
 }
 
 void loop()

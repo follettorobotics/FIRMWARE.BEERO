@@ -104,11 +104,9 @@ public:
 class LoadCellHandler {
 private:
     float loadcellValues[NUM_LOADCELLS];
-    byte loadcellTarget; 
 
 public:
-    LoadCellHandler(byte loadcellNumber)
-        :  loadcellTarget(loadcellNumber) {
+    LoadCellHandler(){
         for (int i = 0; i < NUM_LOADCELLS; i++) {
             loadcellValues[i] = 0.0;
         }
