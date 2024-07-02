@@ -157,10 +157,6 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         motorHandler->execute(); 
         responseIndex = motorHandler->response(response); 
 
-        // for (int i=0; i<responseIndex; i++){
-        //     Serial.println(response[i]); 
-        // }
-
         delete(motorHandler); 
         
         return responseIndex; 
@@ -209,8 +205,40 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
 
         return responseIndex; 
         
+    }else if(request[index] == loadcellInitialReqCommand){
+        Serial.println("loadcell initial handler");
+        index++;
+        
+        // initialize all the three loadcell
+        for (int i=0; i<3; i++){
+            LoadcellSetup::initializePins(i);
+        }
+        
+        // make the response
+        response[responseIndex++] = startByte;
+        response[responseIndex++] = loadcellInitialRspCommand;
+        response[responseIndex++] = endByte;
+
+        return responseIndex;
+        
+    }else if(request[index] == loadcellReadReqCommand){
+        Serial.println("laodcell read handler");
+        index++; 
+
+        // read all the three loadcell
+        LoadCellHandler* loadcellHandler = new LoadCellHandler(); 
+        loadcellHandler->execute(); 
+
+        // make the response
+        responseIndex = loadcellHandler->response(response); 
+
+        // delete the class
+        delete(loadcellHandler); 
+
+        return responseIndex; 
+        
     }else{
-        // non request 
+        // non request, error occur 
         response[responseIndex++] = startByte;
         response[responseIndex++] = nonExistErrorCommand;
         response[responseIndex++] = endByte;

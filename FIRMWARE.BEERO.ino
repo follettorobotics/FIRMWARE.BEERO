@@ -8,6 +8,7 @@
 #include "RelayHandler.h"
 #include "SensorHandler.h"
 #include "MotorHandler.h"
+#include "LoadcellHandler.h"
 
 #define SERVER_PORT 502
 #define sspin       53

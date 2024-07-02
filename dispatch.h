@@ -5,6 +5,7 @@
 #include "SensorHandler.h"
 #include "RelayHandler.h"
 #include "MotorHandler.h"
+#include "LoadcellHandler.h"
 
 #define RELAY                       7
 #define EX_MOTOR                    4
@@ -18,12 +19,16 @@
 #define relayHandlerReqCommand      0xB1
 #define motorRunReqCommand          0xB2
 #define relayOnOffReqCommand        0xB3
+#define loadcellInitialReqCommand   0xB4
+#define loadcellReadReqCommand      0xB5
 
 // Response 
 #define sensorReadRspCommand        0xC0
 #define relayHandlerRspCommand      0xC1
 #define motorRunRspCommand          0XC2
 #define relayOnOffRspCommand        0xC3
+#define loadcellInitialRspCommand   0xC4
+#define loadcellReadRspCommand      0xC5
 
 // Error code command
 #define startByteErrorCommand       0xE0
