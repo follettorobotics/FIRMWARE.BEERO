@@ -55,7 +55,7 @@ bool MotorHandler::getSensorLimitValue(uint8_t sensorLimitParameter){
     if (sensorLimitParameter > 2){
         return isBit==1; 
     }else{
-        return isBit==1; 
+        return isBit==0; 
     }
 }
 

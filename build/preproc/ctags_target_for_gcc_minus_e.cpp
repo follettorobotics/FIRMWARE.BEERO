@@ -20,7 +20,7 @@ TCPHandler& tcpHandler = TCPHandler::getInstance();
 
 void setup()
 {
- Serial.begin(115200);
+   Serial.begin(115200);
     Ethernet.init(53);
 
     // Ethernet and TCPserver starts

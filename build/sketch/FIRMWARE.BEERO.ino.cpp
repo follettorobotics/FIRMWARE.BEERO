@@ -26,7 +26,7 @@ void loop();
 #line 20 "C:\\Users\\escap\\Desktop\\beero\\FIRMWARE.BEERO\\FIRMWARE.BEERO.ino"
 void setup()
 {
-	Serial.begin(115200);
+	  Serial.begin(115200);
     Ethernet.init(sspin);
     
     // Ethernet and TCPserver starts
