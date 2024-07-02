@@ -16,7 +16,7 @@ bool LoadCellHandler::execute() {
 size_t LoadCellHandler::response(byte* loadcellRsp) {
     size_t index = 0;
     loadcellRsp[index++] = startByte; 
-    loadcellRsp[index++] = loadCellRspCommand;
+    loadcellRsp[index++] = loadcellReadRspCommand;
 
     for (int i=0; i<3; i++){
         float value = loadcellValues[i];

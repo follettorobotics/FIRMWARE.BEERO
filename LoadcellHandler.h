@@ -7,7 +7,8 @@
 const int NUM_LOADCELLS = 16;
 
 #define startByte                   0x7E
-#define loadCellRspCommand          0xC4
+#define loadcellInitialRspCommand   0xC4
+#define loadcellReadRspCommand      0xC5
 #define endByte                     0xAA
 
 #define SET_BIT(port, bit) ((port) |= (1 << (bit)))
