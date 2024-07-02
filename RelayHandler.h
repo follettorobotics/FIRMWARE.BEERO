@@ -41,7 +41,6 @@ public:
         relayPin = relayPins[relayNumber-1];
         if (controlTime != 0){
             // time control 
-            startTime = millis();
         }else{
             // ON, OFF control 
             digitalWrite(relayPin, on); 

@@ -28,6 +28,7 @@ bool SensorHandler::execute(){
     digitalWrite(LOAD, HIGH);
     
     uint16_t temp = 0;
+    sensor_value = 0; 
 
     for (int i=0; i<16; i++){
         int value = digitalRead(DIN);
