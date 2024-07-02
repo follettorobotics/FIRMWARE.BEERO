@@ -1,8 +1,0 @@
-{
-    "sketch": "FIRMWARE.BEERO.ino",
-    "output": "build",
-    "configuration": "cpu=atmega2560",
-    "board": "arduino:avr:mega",
-    "programmer": "usbasp",
-    "port": "COM6"
-}
