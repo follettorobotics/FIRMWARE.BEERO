@@ -2,12 +2,12 @@
   {
     "Sourcefile": null,
     "Include": "",
-    "Includepath": "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\cores\\arduino"
+    "Includepath": "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino"
   },
   {
     "Sourcefile": null,
     "Include": "",
-    "Includepath": "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\variants\\mega"
+    "Includepath": "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\mega"
   },
   {
     "Sourcefile": "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\FIRMWARE.BEERO.ino.cpp",
@@ -17,7 +17,7 @@
   {
     "Sourcefile": "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\FIRMWARE.BEERO.ino.cpp",
     "Include": "SPI.h",
-    "Includepath": "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src"
+    "Includepath": "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src"
   },
   {
     "Sourcefile": "C:\\Users\\Owner\\OneDrive\\바탕 화면\\FIRMWARE.BEERO\\build\\sketch\\FIRMWARE.BEERO.ino.cpp",
@@ -95,7 +95,7 @@
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.5\\libraries\\SPI\\src\\SPI.cpp",
+    "Sourcefile": "C:\\Users\\Owner\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SPI\\src\\SPI.cpp",
     "Include": "",
     "Includepath": null
   }
