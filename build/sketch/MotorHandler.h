@@ -59,6 +59,7 @@ private:
     uint16_t motorAddStep;
     uint8_t relayBrake; 
     uint8_t sensorLimit;
+    uint8_t errorCheckSensorLimit; 
 
     uint8_t dirPin; 
     uint8_t pwmPin;
@@ -66,13 +67,14 @@ private:
     uint16_t currentStep = 0; 
 
     bool sensor = false; 
+    bool errorCheckSensor = false; 
 
 public:
 
     MotorHandler(int motorNumber, uint8_t motorDir, uint16_t motorStep, 
-        uint16_t motorAddStep, uint8_t relayBrake, uint8_t sensorLimit):
+        uint16_t motorAddStep, uint8_t relayBrake, uint8_t sensorLimit, uint8_t errorCheckSensorLimit):
     motorNumber(motorNumber), motorDir(motorDir), motorStep(motorStep), 
-    motorAddStep(motorAddStep), relayBrake(relayBrake), sensorLimit(sensorLimit){
+    motorAddStep(motorAddStep), relayBrake(relayBrake), sensorLimit(sensorLimit), errorCheckSensorLimit(errorCheckSensorLimit){
 
         dirPin = exMotorPinAddress[motorNumber].DIR;
         pwmPin = exMotorPinAddress[motorNumber].PWM;
@@ -83,24 +85,27 @@ public:
             digitalWrite(dirPin, false);
         }
 
-        Serial.print("motor number: ");
-        Serial.println(motorNumber);
+        // Serial.print("motor number: ");
+        // Serial.println(motorNumber);
 
-        Serial.print("motorDir: ");
-        Serial.println(motorDir);
+        // Serial.print("motorDir: ");
+        // Serial.println(motorDir);
 
-        Serial.print("motorStep: ");
-        Serial.println(motorStep);
+        // Serial.print("motorStep: ");
+        // Serial.println(motorStep);
 
-        Serial.print("motorAddStep: ");
-        Serial.println(motorAddStep);
+        // Serial.print("motorAddStep: ");
+        // Serial.println(motorAddStep);
 
-        Serial.print("relayBrake: ");
-        Serial.println(relayBrake);
+        // Serial.print("relayBrake: ");
+        // Serial.println(relayBrake);
         
 
-        Serial.print("sensorLimit: ");
-        Serial.println(sensorLimit);
+        // Serial.print("sensorLimit: ");
+        // Serial.println(sensorLimit);
+
+        // Serial.print("errorCheckSensorLimit: ");
+        // Serial.println(errorCheckSensorLimit);
     }
 
     bool execute(); 

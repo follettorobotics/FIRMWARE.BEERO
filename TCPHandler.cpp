@@ -8,8 +8,10 @@ TCPHandler& TCPHandler::getInstance(){
 }
 
 void TCPHandler::begin(byte mac[], IPAddress ip){
+    Serial.println("tcp begin");
     Ethernet.begin(mac, ip);
     TCPserver.begin();
+    Serial.println("tcp begin starts!");
 }
 
 
