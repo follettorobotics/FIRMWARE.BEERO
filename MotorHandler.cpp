@@ -46,10 +46,6 @@ bool MotorHandler::getSensorLimitValue(uint8_t sensorLimitParameter){
     uint16_t sensorValue = sensorHandler.getSensorValue();
 
     bool isBit = (sensorValue >> sensorLimitParameter) & 1; 
-    // if (sensorLimitParameter == 2){
-    //   Serial.print("cup sensor 1: "); 
-    //   Serial.println(isBit); 
-    // }
 
     if (sensorLimitParameter > 2){
         return isBit==1; 

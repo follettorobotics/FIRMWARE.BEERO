@@ -5,7 +5,7 @@
 #include "SensorHandler.h"
 #include <Arduino.h>
 
-#define EX_MOTOR           4
+#define EX_MOTOR        4
 
 #define PIN_PC5         32
 #define PIN_PC4         33
@@ -78,10 +78,35 @@ public:
         dirPin = exMotorPinAddress[motorNumber].DIR;
         pwmPin = exMotorPinAddress[motorNumber].PWM;
 
+        bool direction; 
         if (motorDir == doorOpen){
-            digitalWrite(dirPin, true);
+            direction = true; 
         }else{
-            digitalWrite(dirPin, false);
+            direction = false;
+        }
+
+        // motor dir 
+        if (motorNumber == 0){
+            if (direction){
+                digitalWrite(dirPin, direction);
+            }else{
+                digitalWrite(dirPin, !direction);
+            }
+
+        }else if (motorNumber == 1){
+            if (direction){
+                digitalWrite(dirPin, !direction);
+            }else{
+                digitalWrite(dirPin, direction);
+            }
+
+        }else{
+            // motorNumber == 2
+            if (direction){
+                digitalWrite(dirPin, !direction);
+            }else{
+                digitalWrite(dirPin, direction);
+            }
         }
     }
 
