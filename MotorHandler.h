@@ -17,8 +17,6 @@
 #define PIN_PB5         11
 #define PIN_PB4         10
 
-extern uint16_t motorStepCalculate[EX_MOTOR] = {0, 0, 0, 0}; 
-
 struct ExMotorPins{
     int8_t DIR;
     int8_t PWM; 

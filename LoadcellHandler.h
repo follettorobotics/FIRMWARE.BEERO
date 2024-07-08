@@ -6,6 +6,10 @@
 
 const int NUM_LOADCELLS = 16;
 
+extern float CALIBRATION_FACTORS[3];
+
+// #define calibration_factor          -7050.0
+
 #define startByte                   0x7E
 #define loadcellInitialRspCommand   0xC4
 #define loadcellReadRspCommand      0xC5
@@ -95,8 +99,8 @@ class LoadcellSetup {
 public:
     static bool initializePins(int index) {
         scales[index].begin(LOADCELL_DOUT_PINS[index], LOADCELL_SCK_PINS[index]);
-        scales[index].set_scale(-7050.0);
-        scales[index].tare();
+        scales[index].set_scale(CALIBRATION_FACTORS[index]);
+        scales[index].tare(20);
 
         delay(100);
     }

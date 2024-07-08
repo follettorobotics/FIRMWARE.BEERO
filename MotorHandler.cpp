@@ -29,7 +29,6 @@ bool MotorHandler::execute(){
     }
 
     if (relayBrake != 0x00){
-        Serial.println("relay off timing"); 
         RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
         delete relayHandler; 
     }
