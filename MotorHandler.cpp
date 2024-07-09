@@ -16,6 +16,7 @@ bool MotorHandler::execute(){
                 if (motorAddStep != 0){
                     // additional step exists
                     motorAddStep--; 
+                    currentStep--; 
                 }else{
                     break; 
                 }

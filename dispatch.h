@@ -48,8 +48,8 @@
 #define relayControlErrorByte       0xD6
 
 // motor direction
-#define doorOpen                    0x00
-#define doorClose                   0xff
+#define doorDown                    0x00
+#define doorUp                      0xff
 
 // relay ON OFF
 #define relayOn                     0x01

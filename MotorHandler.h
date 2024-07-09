@@ -80,6 +80,7 @@ public:
 
         bool direction; 
         if (motorDir == doorOpen){
+            // down
             direction = true; 
         }else{
             direction = false;
@@ -88,24 +89,24 @@ public:
         // motor dir 
         if (motorNumber == 0){
             if (direction){
-                digitalWrite(dirPin, direction);
+                digitalWrite(dirPin, true);
             }else{
-                digitalWrite(dirPin, !direction);
+                digitalWrite(dirPin, false);
             }
 
         }else if (motorNumber == 1){
             if (direction){
-                digitalWrite(dirPin, !direction);
+                digitalWrite(dirPin, false);
             }else{
-                digitalWrite(dirPin, direction);
+                digitalWrite(dirPin, true);
             }
 
         }else{
             // motorNumber == 2
             if (direction){
-                digitalWrite(dirPin, !direction);
+                digitalWrite(dirPin, false);
             }else{
-                digitalWrite(dirPin, direction);
+                digitalWrite(dirPin, true);
             }
         }
     }
