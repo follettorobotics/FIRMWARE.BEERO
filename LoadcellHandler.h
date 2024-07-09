@@ -100,9 +100,9 @@ public:
     static bool initializePins(int index) {
         scales[index].begin(LOADCELL_DOUT_PINS[index], LOADCELL_SCK_PINS[index]);
         scales[index].set_scale(CALIBRATION_FACTORS[index]);
-        scales[index].tare(20);
+        scales[index].tare();
 
-        delay(100);
+        delay(50);
     }
 };
 
