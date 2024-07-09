@@ -15,8 +15,7 @@ bool MotorHandler::execute(){
             }else{
                 if (motorAddStep != 0){
                     // additional step exists
-                    motorAddStep--; 
-                    currentStep--; 
+                    motorAddStep--;  
                 }else{
                     break; 
                 }
@@ -47,11 +46,12 @@ bool MotorHandler::getSensorLimitValue(uint8_t sensorLimitParameter){
 
     bool isBit = (sensorValue >> sensorLimitParameter) & 1; 
 
-    if (sensorLimitParameter > 2){
-        return isBit==1; 
-    }else{
-        return isBit==0; 
-    }
+    // if (sensorLimitParameter > 2){
+    //     return isBit==1; 
+    // }else{
+    //     return isBit==0; 
+    // }
+    return isBit==1; 
 }
 
 size_t MotorHandler::response(byte* exMotorControlRsp){
