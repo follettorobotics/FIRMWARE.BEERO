@@ -14,7 +14,6 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
     size_t index = 0; 
 
      if (request[index] != startByte){
-        Serial.println("start byte error"); 
         // start byte error
         response[responseIndex++] = startByte;
         response[responseIndex++] = startByteErrorCommand;
@@ -24,7 +23,6 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
     }
 
     if (request[requestSize - 1] != endByte){
-        Serial.println("end byte error"); 
         // end byte error
         response[responseIndex++] = startByte;
         response[responseIndex++] = endByteErrorCommand;
@@ -36,7 +34,6 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
     index++; 
 
     if (request[index] == sensorReandReqCommand){
-        Serial.println("sensor request dispatch"); 
         // sensor read
         // call class SensorHandler
         SensorHandler& sensorHandler = SensorHandler::getInstance();
@@ -53,7 +50,6 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         
         return responseIndex; 
     }else if (request[index] == relayHandlerReqCommand){
-        Serial.println("relay control with time dispatch"); 
         // relay 
         index++; 
 
@@ -69,7 +65,6 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
 
             return responseIndex; 
         }
-
 
         // Relay Handler
         byte integerTime = request[index++];
@@ -90,25 +85,21 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         return responseIndex;
 
     }else if (request[index] == motorRunReqCommand){
-        Serial.println("motor control dispatch");
         index++;
 
         byte motorNumber = request[index++];
         if (motorNumber <1 || motorNumber > EX_MOTOR){
-            // Serial.println("motor number error");
             response[responseIndex++] = startByte;
             response[responseIndex++] = motorRunErrorCommand;
             response[responseIndex++] = motorNumberErrorByte;
             response[responseIndex++] = endByte;
             return responseIndex;
         }
-        Serial.print("motor_number");
-        Serial.println(motorNumber); 
+
         motorNumber--; 
 
         byte motorDir = request[index++];
         if (motorDir!= doorOpen && motorDir!= doorClose){
-            // Serial.println("motor dir error");
             response[responseIndex++] = startByte;
             response[responseIndex++] = motorRunErrorCommand;
             response[responseIndex++] = motorDirErrorByte;
@@ -141,7 +132,6 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         byte sensorLimit = request[index++]; 
 
         if (sensorLimit < 0 || sensorLimit > sensorValueIndex){
-            // Serial.println("sensor limit out of range in motor run");
             response[responseIndex++] = startByte;
             response[responseIndex++] = motorRunErrorCommand;
             response[responseIndex++] = SensorLimitErrorByte;
@@ -152,7 +142,6 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         byte errorCheckSensorLimit = request[index++]; 
 
         // motor class
-        // Serial.println("motor run execute"); 
         MotorHandler* motorHandler = new MotorHandler(motorNumber, motorDir, motorStep, motorAdd, relayBrake, sensorLimit, errorCheckSensorLimit); 
         motorHandler->execute(); 
         responseIndex = motorHandler->response(response); 
@@ -162,7 +151,6 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         return responseIndex; 
 
     }else if(request[index] == relayOnOffReqCommand){
-        Serial.println("relay on/off handler");
         index++;
 
         byte relayNumber = request[index++];
@@ -206,7 +194,6 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         return responseIndex; 
         
     }else if(request[index] == loadcellInitialReqCommand){
-        Serial.println("loadcell initial handler");
         index++;
         
         // initialize all the three loadcell
@@ -222,7 +209,6 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         return responseIndex;
         
     }else if(request[index] == loadcellReadReqCommand){
-        Serial.println("laodcell read handler");
         index++; 
 
         // read all the three loadcell
@@ -248,12 +234,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
 }
 
 unsigned long Dispatcher::hexToDecimal(const byte data1, const byte data2){
-    Serial.print("data 1 (integer part): ");
-    Serial.println(data1);
-
     unsigned long integerPart = data1 * 1000;
-    Serial.print("data 1 (integer part) * 1000: ");
-    Serial.println(integerPart);
     unsigned long decimalPart = (unsigned long) data2;
     unsigned long millisecTime = 0;
     
