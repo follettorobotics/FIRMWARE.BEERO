@@ -17,6 +17,8 @@
 #define PIN_PB5         11
 #define PIN_PB4         10
 
+#define MOTOR_DELAY     600
+
 struct ExMotorPins{
     int8_t DIR;
     int8_t PWM; 
@@ -67,6 +69,9 @@ private:
 
     bool sensor = false; 
     bool errorCheckSensor = false; 
+
+    unsigned int startTime; 
+    unsigned int currentTime; 
 
 public:
 

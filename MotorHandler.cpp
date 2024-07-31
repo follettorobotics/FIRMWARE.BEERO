@@ -4,37 +4,51 @@
 bool MotorHandler::execute(){
     if (currentStep == 0 and relayBrake != 0x00){
         // if the relay brake exists, relay ON 
-        RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, true); 
-        delete relayHandler;
-    }
-    if (sensorLimit != 16){
-        if (getSensorLimitValue(sensorLimit)){
-            sensor = true; 
+        if (relayBrake != 0x00){
+            RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, true); 
+            delete relayHandler;
         }
-    }else{
-        if (currentStep == motorStep){
-            if (relayBrake != 0x00){
-                RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
-                delete relayHandler;
-            }
-        return true; 
-        }
-    }
-    if (sensor){
-        if (motorAddStep == 0){
-            if (relayBrake != 0x00){
-                RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
-                delete relayHandler;
-            }
-            return true; 
-        }else{
-            motorAddStep--; 
-        }
+        startTime = micros();
+        return false; 
     }
 
-    digitalWrite(pwmPin, true);
-    currentStep++; 
-    digitalWrite(pwmPin, false);
+    currentTime = micros(); 
+    unsigned int elapsedTime = currentTime - startTime; 
+
+    if (elapsedTime >= MOTOR_DELAY){
+        // delay check 
+        if (sensorLimit != 16){
+            if (getSensorLimitValue(sensorLimit)){
+                sensor = true; 
+            }
+        }else{
+            // NOT sensor check 
+            if (currentStep == motorStep){
+                if (relayBrake != 0x00){
+                    RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
+                    delete relayHandler;
+                }
+                return true; 
+            }
+        }
+
+        if (sensor){
+            // if the sensor check exists, it means addStep can exists. 
+            if (motorAddStep == 0){
+                if (relayBrake != 0x00){
+                    RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
+                    delete relayHandler;
+                }
+                return true; 
+            }else{
+                motorAddStep--; 
+            }
+        }
+
+        digitalWrite(pwmPin, true);
+        currentStep++; 
+        digitalWrite(pwmPin, false);
+    }
     return false; 
 }
 
