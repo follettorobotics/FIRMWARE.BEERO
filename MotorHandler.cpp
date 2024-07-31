@@ -1,56 +1,50 @@
 #include "MotorHandler.h"
 
-// non-concurrency 
+// concurrency 
 bool MotorHandler::execute(){
-    if (relayBrake != 0x00){
+    if (currentStep == 0 and relayBrake != 0x00){
+        // if the relay brake exists, relay ON 
         RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, true); 
-        delete relayHandler; 
+        delete relayHandler;
     }
-    for (int i=0; i<motorStep; i++){
-        if ((sensorLimit < 16)){
-            if (!sensor){
-                if (getSensorLimitValue(sensorLimit)){
-                    sensor = true; 
-                }
-            }else{
-                if (motorAddStep != 0){
-                    // additional step exists
-                    motorAddStep--;  
-                }else{
-                    break; 
-                }
-            }
+    if (sensorLimit != 16){
+        if (getSensorLimitValue(sensorLimit)){
+            sensor = true; 
         }
-
-        digitalWrite(pwmPin, true);
-        currentStep++; 
-        digitalWrite(pwmPin, false);
-        delayMicroseconds(300); 
+    }else{
+        if (currentStep == motorStep){
+            if (relayBrake != 0x00){
+                RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
+                delete relayHandler;
+            }
+        return true; 
+        }
+    }
+    if (sensor){
+        if (motorAddStep == 0){
+            if (relayBrake != 0x00){
+                RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
+                delete relayHandler;
+            }
+            return true; 
+        }else{
+            motorAddStep--; 
+        }
     }
 
-    if (relayBrake != 0x00){
-        RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
-        delete relayHandler; 
-    }
-
-    if (errorCheckSensorLimit != 16){
-        errorCheckSensor = getSensorLimitValue(errorCheckSensorLimit);
-    }
-    return true; 
+    digitalWrite(pwmPin, true);
+    currentStep++; 
+    digitalWrite(pwmPin, false);
+    return false; 
 }
 
 bool MotorHandler::getSensorLimitValue(uint8_t sensorLimitParameter){
     SensorHandler& sensorHandler = SensorHandler::getInstance();
-    sensorHandler.execute(); 
+    // sensorHandler.execute(); 
     uint16_t sensorValue = sensorHandler.getSensorValue();
 
     bool isBit = (sensorValue >> sensorLimitParameter) & 1; 
 
-    // if (sensorLimitParameter > 2){
-    //     return isBit==1; 
-    // }else{
-    //     return isBit==0; 
-    // }
     return isBit==1; 
 }
 
