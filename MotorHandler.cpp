@@ -2,7 +2,7 @@
 
 // concurrency 
 bool MotorHandler::execute(){
-    if (currentStep == 0 and relayBrake != 0x00){
+    if (currentStep == 0){
         // if the relay brake exists, relay ON 
         if (relayBrake != 0x00){
             RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, true); 
