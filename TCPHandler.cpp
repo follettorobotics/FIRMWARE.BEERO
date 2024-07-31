@@ -26,6 +26,18 @@ void TCPHandler::clientHandle(){
     // parse the message logic 
     messageHandle(); 
 
+    // long-term message
+    DeviceResponse& deviceRsp = DeviceResponse::getInstance(); 
+    byte dataToSend[100]; 
+    size_t dataToSendSize = deviceRsp.getResponse(dataToSend); 
+
+    if (dataToSendSize != 0){
+        bool result = sendMessageToClient(dataToSend, dataToSendSize);
+        if (!result){
+            deviceRsp.appendResponse(dataToSend, dataToSendSize); 
+        }
+    }
+
     return;
 }
 
@@ -52,7 +64,7 @@ void TCPHandler::messageHandle(){
         BitStuffing& bitStuffing = BitStuffing::getInstance(); 
         unStuffedReqSize = bitStuffing.removeBitStuffing(request, requestSize, unStuffedReq);
 
-        byte response[20] = {0, };
+        byte response[30] = {0, };
         size_t responseSize = 0;
 
         responseSize = dispatch.dispatch(unStuffedReq, unStuffedReqSize, response);

@@ -96,14 +96,14 @@ const int LOADCELL_SCK_PINS[NUM_LOADCELLS] = {
 extern HX711 scales[NUM_LOADCELLS];
 
 class LoadcellSetup {
+private:
+    int initial_step; 
 public:
-    static bool initializePins(int index) {
-        scales[index].begin(LOADCELL_DOUT_PINS[index], LOADCELL_SCK_PINS[index]);
-        scales[index].set_scale(CALIBRATION_FACTORS[index]);
-        scales[index].tare();
-
-        delay(50);
+    LoadcellSetup(){
+        initial_step = 0; 
     }
+    bool execute(); 
+    size_t response(byte* loadcellSetupRsp);
 };
 
 class LoadCellHandler {

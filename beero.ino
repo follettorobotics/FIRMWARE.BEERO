@@ -22,13 +22,6 @@ void setup()
 {
 	Serial.begin(115200);
     Ethernet.init(sspin);
-    
-    // Ethernet and TCPserver starts
-    tcpHandler.begin(mac, ip);
-    Serial.println("tcp handler");
-    
-    Serial.print("IP: ");
-    Serial.println(ip);
 
     // sensor initial
     SensorHandler& sensorHandler = SensorHandler::getInstance();
@@ -41,6 +34,19 @@ void setup()
     // motor initial
     Serial.println("motor");
     MotorSetup::initializePins(); 
+
+    // loadcell pin setup
+    Serial.println("loadcell");
+    for (int index=0; index<3; index++){
+        scales[index].begin(LOADCELL_DOUT_PINS[index], LOADCELL_SCK_PINS[index]);
+    }
+
+    // Ethernet and TCPserver starts
+    tcpHandler.begin(mac, ip);
+    Serial.println("tcp handler");
+    
+    Serial.print("IP: ");
+    Serial.println(ip);
 }
 
 void loop()
