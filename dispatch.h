@@ -34,10 +34,9 @@
 
 // ACK 
 #define relayHandlerACKCommand      0xD1
-
-
-#define ACKsuccess                  0x00
-
+#define motorRunACKCommand          0xD2
+#define loadcellInitialACKCommand   0xD4
+#define loadcellReadACKCommand      0xD5
 
 // Error code command
 #define startByteErrorCommand       0xE0
