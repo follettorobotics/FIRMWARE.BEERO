@@ -6,6 +6,8 @@
 #include "RelayHandler.h"
 #include "MotorHandler.h"
 #include "LoadcellHandler.h"
+#include "Operator.h"
+#include "Command.h"
 
 #define RELAY                       7
 #define EX_MOTOR                    4
@@ -29,6 +31,13 @@
 #define relayOnOffRspCommand        0xC3
 #define loadcellInitialRspCommand   0xC4
 #define loadcellReadRspCommand      0xC5
+
+// ACK 
+#define relayHandlerACKCommand      0xD1
+
+
+#define ACKsuccess                  0x00
+
 
 // Error code command
 #define startByteErrorCommand       0xE0

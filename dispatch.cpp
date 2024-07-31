@@ -37,7 +37,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         // sensor read
         // call class SensorHandler
         SensorHandler& sensorHandler = SensorHandler::getInstance();
-        sensorHandler.execute();
+        // sensorHandler.execute();
         uint16_t sensorValue = sensorHandler.getSensorValue();
         byte sensorLw = sensorValue & 0xFF;
         byte sensorUp = (sensorValue >> 8) & 0xFF;
@@ -77,13 +77,17 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
 
         // relayHandler instance 
         RelayHandler* relayHandler = new RelayHandler(relayNumber, controlTime, on);
-        relayHandler->execute();
+        Operator& operatorInstance = Operator::getInstance(); 
+        Command* relayHandlerCmd = new RelayHandlerCommand(relayHandler); 
+        operatorInstance.addCommand(relayHandlerCmd); 
 
-        responseIndex = relayHandler->response(response); 
+        // ACK 
+        response[responseIndex++] = startByte; 
+        response[responseIndex++] = relayHandlerACKCommand; 
+        response[responseIndex++] = relayNumber; 
+        response[responseIndex++] = endByte; 
 
-        delete(relayHandler); 
         return responseIndex;
-
     }else if (request[index] == motorRunReqCommand){
         index++;
 
@@ -143,10 +147,15 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
 
         // motor class
         MotorHandler* motorHandler = new MotorHandler(motorNumber, motorDir, motorStep, motorAdd, relayBrake, sensorLimit, errorCheckSensorLimit); 
-        motorHandler->execute(); 
-        responseIndex = motorHandler->response(response); 
+        Operator& operatorInstance = Operator::getInstance(); 
+        Command* motorHandlerCommand = new MotorHandlerCommand(motorHandler); 
+        operatorInstance.addCommand(motorHandlerCommand);
 
-        delete(motorHandler); 
+        // ACK 
+        response[responseIndex++] = startByte; 
+        response[responseIndex++] = motorRunACKCommand; 
+        response[responseIndex++] = motorNumber;
+        response[responseIndex++] = endByte;
         
         return responseIndex; 
 
@@ -195,15 +204,15 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         
     }else if(request[index] == loadcellInitialReqCommand){
         index++;
-        
-        // initialize all the three loadcell
-        for (int i=0; i<3; i++){
-            LoadcellSetup::initializePins(i);
-        }
-        
-        // make the response
-        response[responseIndex++] = startByte;
-        response[responseIndex++] = loadcellInitialRspCommand;
+
+        LoadcellSetup* loadcellSetup = new LoadcellSetup(); 
+        Operator& operatorInstance = Operator::getInstance(); 
+        Command* loadcellSetupCommand = new LoadCellInitialCommand(loadcellSetup); 
+        operatorInstance.addCommand(loadcellSetupCommand);
+
+        // ACK 
+        response[responseIndex++] = startByte; 
+        response[responseIndex++] = loadcellInitialACKCommand; 
         response[responseIndex++] = endByte;
 
         return responseIndex;
@@ -213,12 +222,9 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
 
         // read all the three loadcell
         LoadCellHandler* loadcellHandler = new LoadCellHandler(); 
-        loadcellHandler->execute(); 
-
-        // make the response
+        loadcellHandler->execute();
         responseIndex = loadcellHandler->response(response); 
 
-        // delete the class
         delete(loadcellHandler); 
 
         return responseIndex; 
