@@ -2,6 +2,9 @@
 
 // non-concurrency 
 bool MotorHandler::execute(){
+    // int j = 0; 
+    // Serial.print("first current step: ");
+    // Serial.println(currentStep); 
     if (relayBrake != 0x00){
         RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, true); 
         delete relayHandler; 
@@ -11,12 +14,16 @@ bool MotorHandler::execute(){
             if (!sensor){
                 if (getSensorLimitValue(sensorLimit)){
                     sensor = true; 
+                    // Serial.print("motor step when sensor value on");
+                    // Serial.println(currentStep); 
                 }
             }else{
                 if (motorAddStep != 0){
                     // additional step exists
                     motorAddStep--;  
                 }else{
+                    // Serial.print("current step: ");
+                    // Serial.println(currentStep); 
                     break; 
                 }
             }
@@ -25,7 +32,10 @@ bool MotorHandler::execute(){
         digitalWrite(pwmPin, true);
         currentStep++; 
         digitalWrite(pwmPin, false);
-        delayMicroseconds(300); 
+        // j++;
+        // Serial.print("temp step ");
+        // Serial.println(j);
+        delayMicroseconds(600); 
     }
 
     if (relayBrake != 0x00){
@@ -36,6 +46,8 @@ bool MotorHandler::execute(){
     if (errorCheckSensorLimit != 16){
         errorCheckSensor = getSensorLimitValue(errorCheckSensorLimit);
     }
+    // Serial.print("final current step: ");
+    // Serial.println(currentStep); 
     return true; 
 }
 

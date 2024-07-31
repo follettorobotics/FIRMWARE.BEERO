@@ -6,7 +6,7 @@
 
 const int NUM_LOADCELLS = 16;
 
-extern float CALIBRATION_FACTORS[3];
+extern float CALIBRATION_FACTORS[5];
 
 // #define calibration_factor          -7050.0
 

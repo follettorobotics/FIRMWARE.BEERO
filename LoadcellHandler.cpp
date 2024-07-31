@@ -2,10 +2,12 @@
 
 HX711 scales[NUM_LOADCELLS];
 
-float CALIBRATION_FACTORS[3] = {
+float CALIBRATION_FACTORS[5] = {
     -744.61f,
     -1921.96f,
-    -1998.84f
+    -1998.84f,
+    -744.61f,
+    -744.61f
 };
 
 bool LoadCellHandler::execute() {
