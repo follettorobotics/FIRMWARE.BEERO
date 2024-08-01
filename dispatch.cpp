@@ -220,7 +220,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         
     }else if(request[index] == loadcellReadReqCommand){
         index++; 
-        Serial.println("Loadcell read"); 
+        // Serial.println("Loadcell read"); 
         // read all the three loadcell
         LoadCellHandler* loadcellHandler = new LoadCellHandler(); 
         loadcellHandler->execute();
