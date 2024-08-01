@@ -53,4 +53,7 @@ void loop()
 {
 	TCPHandler& tcpHandler = TCPHandler::getInstance(); 
     tcpHandler.clientHandle();
+    // operator
+    Operator& operatorInvoker = Operator::getInstance();
+    operatorInvoker.executeCommands();
 }

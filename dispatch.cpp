@@ -89,6 +89,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
 
         return responseIndex;
     }else if (request[index] == motorRunReqCommand){
+        // Serial.println("motor run request parsing"); 
         index++;
 
         byte motorNumber = request[index++];
@@ -219,16 +220,21 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         
     }else if(request[index] == loadcellReadReqCommand){
         index++; 
-
+        Serial.println("Loadcell read"); 
         // read all the three loadcell
         LoadCellHandler* loadcellHandler = new LoadCellHandler(); 
         loadcellHandler->execute();
         responseIndex = loadcellHandler->response(response); 
-
+    
         delete(loadcellHandler); 
 
+        // Serial.println("loadcell value response"); 
+        // for (int i=0; i<responseIndex; i++){
+        //     Serial.print(response[i]);
+        //     Serial.print(" "); 
+        // }
+
         return responseIndex; 
-        
     }else{
         // non request, error occur 
         response[responseIndex++] = startByte;

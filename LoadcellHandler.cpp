@@ -25,6 +25,7 @@ bool LoadcellSetup::execute(){
         scales[initial_step].set_scale(CALIBRATION_FACTORS[initial_step]);
         scales[initial_step].tare(); 
         initial_step = 0;
+        Serial.println("loadcell initial finished"); 
         return true;
     }
 }
@@ -44,12 +45,18 @@ bool LoadCellHandler::execute() {
     // read loadcell 
     for (int i=0; i<3; i++){
         loadcellValues[i] = scales[i].get_units();
+        Serial.print("loadcell value ");
+        Serial.print(i);
+        Serial.print(" ");
+        Serial.println(loadcellValues[i]);
+
         delay(10); 
     }
     return success;
 }
 
 size_t LoadCellHandler::response(byte* loadcellRsp) {
+    Serial.println("make the load cell response");
     size_t index = 0;
     loadcellRsp[index++] = startByte; 
     loadcellRsp[index++] = loadcellReadRspCommand;

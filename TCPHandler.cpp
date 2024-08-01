@@ -32,6 +32,7 @@ void TCPHandler::clientHandle(){
     size_t dataToSendSize = deviceRsp.getResponse(dataToSend); 
 
     if (dataToSendSize != 0){
+        Serial.println("long term send"); 
         bool result = sendMessageToClient(dataToSend, dataToSendSize);
         if (!result){
             deviceRsp.appendResponse(dataToSend, dataToSendSize); 
@@ -58,22 +59,23 @@ void TCPHandler::messageHandle(){
         }
     }
     
-    if (requestSize != 0){
+    if (requestSize != 0){ 
         Dispatcher& dispatch = Dispatcher::getInstance();
 
         BitStuffing& bitStuffing = BitStuffing::getInstance(); 
         unStuffedReqSize = bitStuffing.removeBitStuffing(request, requestSize, unStuffedReq);
 
-        byte response[30] = {0, };
+        byte response[50] = {0, };
         size_t responseSize = 0;
 
         responseSize = dispatch.dispatch(unStuffedReq, unStuffedReqSize, response);
 
-        byte stuffedRsp[20];
-        size_t sstuffedRspSize; 
-        sstuffedRspSize = bitStuffing.applyBitStuffing(response, responseSize, stuffedRsp);
-
-        sendMessageToClient(stuffedRsp, sstuffedRspSize); 
+        if (responseSize != 0){
+            byte stuffedRsp[50];
+            size_t sstuffedRspSize; 
+            sstuffedRspSize = bitStuffing.applyBitStuffing(response, responseSize, stuffedRsp);
+            sendMessageToClient(stuffedRsp, sstuffedRspSize); 
+        }
     }
 
 }

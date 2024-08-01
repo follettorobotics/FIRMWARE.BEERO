@@ -3,12 +3,15 @@
 // concurrency 
 bool MotorHandler::execute(){
     if (currentStep == 0){
-        // if the relay brake exists, relay ON 
+        // if the relay brake exists, relay ON
         if (relayBrake != 0x00){
             RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, true); 
             delete relayHandler;
         }
         startTime = micros();
+        digitalWrite(pwmPin, true);
+        currentStep++; 
+        digitalWrite(pwmPin, false);
         return false; 
     }
 
@@ -16,21 +19,21 @@ bool MotorHandler::execute(){
     unsigned int elapsedTime = currentTime - startTime; 
 
     if (elapsedTime >= MOTOR_DELAY){
-        // delay check 
-        if (sensorLimit != 16){
-            if (getSensorLimitValue(sensorLimit)){
-                sensor = true; 
-            }
-        }else{
-            // NOT sensor check 
-            if (currentStep == motorStep){
-                if (relayBrake != 0x00){
-                    RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
-                    delete relayHandler;
+            // delay check 
+            if (sensorLimit != 16){
+                if (getSensorLimitValue(sensorLimit)){
+                    sensor = true; 
                 }
-                return true; 
+            }else{
+                // NOT sensor check 
+                if (currentStep == motorStep){
+                    if (relayBrake != 0x00){
+                        RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
+                        delete relayHandler;
+                    }
+                    return true; 
+                }
             }
-        }
 
         if (sensor){
             // if the sensor check exists, it means addStep can exists. 
@@ -47,6 +50,7 @@ bool MotorHandler::execute(){
 
         digitalWrite(pwmPin, true);
         currentStep++; 
+        startTime = micros(); 
         digitalWrite(pwmPin, false);
     }
     return false; 
