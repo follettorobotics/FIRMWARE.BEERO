@@ -69,6 +69,7 @@ private:
 
     bool sensor = false; 
     bool errorCheckSensor = false; 
+    bool sensorCheckRequire = false; 
 
     unsigned int startTime; 
     unsigned int currentTime; 
@@ -84,6 +85,12 @@ public:
 
         dirPin = exMotorPinAddress[motorNumber].DIR;
         pwmPin = exMotorPinAddress[motorNumber].PWM;
+
+        if (sensorLimit != 16){
+            sensorCheckRequire = true; 
+        }else{
+            sensorCheckRequire = false; 
+        }
 
         bool direction; 
         if (motorDir == doorOpen){

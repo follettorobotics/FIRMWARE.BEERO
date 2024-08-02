@@ -19,21 +19,21 @@ bool MotorHandler::execute(){
     unsigned int elapsedTime = currentTime - startTime; 
 
     if (elapsedTime >= MOTOR_DELAY){
-            // delay check 
-            if (sensorLimit != 16){
-                if (getSensorLimitValue(sensorLimit)){
-                    sensor = true; 
-                }
-            }else{
-                // NOT sensor check 
-                if (currentStep == motorStep){
-                    if (relayBrake != 0x00){
-                        RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false, packet_number); 
-                        delete relayHandler;
-                    }
-                    return true; 
-                }
+        // delay check 
+        if (sensorCheckRequire){
+            if (getSensorLimitValue(sensorLimit)){
+                sensor = true; 
             }
+        }else{
+            // NOT sensor check 
+            if (currentStep == motorStep){
+                if (relayBrake != 0x00){
+                    RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false, packet_number); 
+                    delete relayHandler;
+                }
+                return true; 
+            }
+        }
 
         if (sensor){
             // if the sensor check exists, it means addStep can exists. 
@@ -45,6 +45,16 @@ bool MotorHandler::execute(){
                 return true; 
             }else{
                 motorAddStep--; 
+            }
+        }else{
+            if (sensorCheckRequire){
+                if (currentStep == motorStep){
+                    if (relayBrake != 0x00){
+                        RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false, packet_number); 
+                        delete relayHandler;
+                    }
+                    return true;
+                }
             }
         }
 
