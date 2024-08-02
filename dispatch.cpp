@@ -155,7 +155,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         // ACK 
         response[responseIndex++] = startByte; 
         response[responseIndex++] = motorRunACKCommand; 
-        response[responseIndex++] = motorNumber;
+        response[responseIndex++] = motorNumber + 1;
         response[responseIndex++] = endByte;
         
         return responseIndex; 
