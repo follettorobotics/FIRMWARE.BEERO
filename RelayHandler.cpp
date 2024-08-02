@@ -33,7 +33,7 @@ size_t RelayHandler::response(byte* relayControlRsp){
         relayControlRsp[index++] = *integerByte;
         relayControlRsp[index++] = *fractionByte;
     }
-
+    relayControlRsp[index++] = packet_number; 
     relayControlRsp[index++] = endByte;
 
     return index;

@@ -13,10 +13,13 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
     size_t responseIndex = 0;
     size_t index = 0; 
 
-     if (request[index] != startByte){
+    uint8_t packet_number = request[requestSize -2]; 
+
+    if (request[index] != startByte){
         // start byte error
         response[responseIndex++] = startByte;
         response[responseIndex++] = startByteErrorCommand;
+        response[responseIndex++] = packet_number; 
         response[responseIndex++] = endByte;
 
         return responseIndex;
@@ -26,6 +29,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         // end byte error
         response[responseIndex++] = startByte;
         response[responseIndex++] = endByteErrorCommand;
+        response[responseIndex++] = packet_number; 
         response[responseIndex++] = endByte;
 
         return responseIndex; 
@@ -46,6 +50,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         response[responseIndex++] = sensorReadRspCommand;
         response[responseIndex++] = sensorLw;
         response[responseIndex++] = sensorUp;
+        response[responseIndex++] = packet_number; 
         response[responseIndex++] = endByte;
         
         return responseIndex; 
@@ -61,6 +66,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
             response[responseIndex++] = startByte;
             response[responseIndex++] = relayHandlerErrorCommand;
             response[responseIndex++] = relayNumberErrorByte;
+            response[responseIndex++] = packet_number; 
             response[responseIndex++] = endByte;
 
             return responseIndex; 
@@ -76,7 +82,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         bool on = false; 
 
         // relayHandler instance 
-        RelayHandler* relayHandler = new RelayHandler(relayNumber, controlTime, on);
+        RelayHandler* relayHandler = new RelayHandler(relayNumber, controlTime, on, packet_number);
         Operator& operatorInstance = Operator::getInstance(); 
         Command* relayHandlerCmd = new RelayHandlerCommand(relayHandler); 
         operatorInstance.addCommand(relayHandlerCmd); 
@@ -85,6 +91,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         response[responseIndex++] = startByte; 
         response[responseIndex++] = relayHandlerACKCommand; 
         response[responseIndex++] = relayNumber; 
+        response[responseIndex++] = packet_number; 
         response[responseIndex++] = endByte; 
 
         return responseIndex;
@@ -97,6 +104,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
             response[responseIndex++] = startByte;
             response[responseIndex++] = motorRunErrorCommand;
             response[responseIndex++] = motorNumberErrorByte;
+            response[responseIndex++] = packet_number; 
             response[responseIndex++] = endByte;
             return responseIndex;
         }
@@ -108,6 +116,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
             response[responseIndex++] = startByte;
             response[responseIndex++] = motorRunErrorCommand;
             response[responseIndex++] = motorDirErrorByte;
+            response[responseIndex++] = packet_number; 
             response[responseIndex++] = endByte;
             return responseIndex;
         }
@@ -129,6 +138,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
             response[responseIndex++] = startByte;
             response[responseIndex++] = motorRunErrorCommand;
             response[responseIndex++] = relayNumberErrorByte;
+            response[responseIndex++] = packet_number; 
             response[responseIndex++] = endByte;
 
             return responseIndex; 
@@ -140,6 +150,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
             response[responseIndex++] = startByte;
             response[responseIndex++] = motorRunErrorCommand;
             response[responseIndex++] = SensorLimitErrorByte;
+            response[responseIndex++] = packet_number; 
             response[responseIndex++] = endByte;
             return responseIndex;
         }
@@ -147,7 +158,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         byte errorCheckSensorLimit = request[index++]; 
 
         // motor class
-        MotorHandler* motorHandler = new MotorHandler(motorNumber, motorDir, motorStep, motorAdd, relayBrake, sensorLimit, errorCheckSensorLimit); 
+        MotorHandler* motorHandler = new MotorHandler(motorNumber, motorDir, motorStep, motorAdd, relayBrake, sensorLimit, errorCheckSensorLimit, packet_number); 
         Operator& operatorInstance = Operator::getInstance(); 
         Command* motorHandlerCommand = new MotorHandlerCommand(motorHandler); 
         operatorInstance.addCommand(motorHandlerCommand);
@@ -156,6 +167,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         response[responseIndex++] = startByte; 
         response[responseIndex++] = motorRunACKCommand; 
         response[responseIndex++] = motorNumber + 1;
+        response[responseIndex++] = packet_number; 
         response[responseIndex++] = endByte;
         
         return responseIndex; 
@@ -170,6 +182,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
             response[responseIndex++] = startByte;
             response[responseIndex++] = relayOnOffErrorCommand;
             response[responseIndex++] = relayNumberErrorByte;
+            response[responseIndex++] = packet_number; 
             response[responseIndex++] = endByte;
 
             return responseIndex; 
@@ -180,6 +193,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
             response[responseIndex++] = startByte;
             response[responseIndex++] = relayOnOffErrorCommand;
             response[responseIndex++] = relayControlErrorByte;
+            response[responseIndex++] = packet_number; 
             response[responseIndex++] = endByte;
 
             return responseIndex; 
@@ -191,7 +205,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         }
 
         // relayHandler instance 
-        RelayHandler* relayHandler = new RelayHandler(relayNumber, 0x00, On);
+        RelayHandler* relayHandler = new RelayHandler(relayNumber, 0x00, On, packet_number);
         delete(relayHandler);
 
         //response
@@ -199,6 +213,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         response[responseIndex++] = relayOnOffRspCommand;
         response[responseIndex++] = relayNumber;
         response[responseIndex++] = relayControl;
+        response[responseIndex++] = packet_number; 
         response[responseIndex++] = endByte;
 
         return responseIndex; 
@@ -206,7 +221,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
     }else if(request[index] == loadcellInitialReqCommand){
         index++;
 
-        LoadcellSetup* loadcellSetup = new LoadcellSetup(); 
+        LoadcellSetup* loadcellSetup = new LoadcellSetup(packet_number); 
         Operator& operatorInstance = Operator::getInstance(); 
         Command* loadcellSetupCommand = new LoadCellInitialCommand(loadcellSetup); 
         operatorInstance.addCommand(loadcellSetupCommand);
@@ -214,6 +229,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         // ACK 
         response[responseIndex++] = startByte; 
         response[responseIndex++] = loadcellInitialACKCommand; 
+        response[responseIndex++] = packet_number; 
         response[responseIndex++] = endByte;
 
         return responseIndex;
@@ -222,7 +238,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         index++; 
         // Serial.println("Loadcell read"); 
         // read all the three loadcell
-        LoadCellHandler* loadcellHandler = new LoadCellHandler(); 
+        LoadCellHandler* loadcellHandler = new LoadCellHandler(packet_number); 
         loadcellHandler->execute();
         responseIndex = loadcellHandler->response(response); 
     
@@ -239,6 +255,7 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         // non request, error occur 
         response[responseIndex++] = startByte;
         response[responseIndex++] = nonExistErrorCommand;
+        response[responseIndex++] = packet_number; 
         response[responseIndex++] = endByte;
         return responseIndex;
     }

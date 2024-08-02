@@ -32,11 +32,12 @@ private:
     unsigned long startTime;
     unsigned long realTime; 
     bool on; 
+    uint8_t packet_number; 
 
 public:
 
-    RelayHandler(int relayNumber, unsigned long controlTime, bool On) 
-        : relayNumber(relayNumber), controlTime(controlTime), on(On) {
+    RelayHandler(int relayNumber, unsigned long controlTime, bool On, uint8_t packet_number) 
+        : relayNumber(relayNumber), controlTime(controlTime), on(On), packet_number(packet_number){
 
         relayPin = relayPins[relayNumber-1];
         if (controlTime != 0){

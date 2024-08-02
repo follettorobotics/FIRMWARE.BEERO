@@ -35,7 +35,7 @@ size_t DeviceResponse::getResponse(byte* dataToSend){
         return 0; 
     }
 
-    for (int i=0; i< currentSize; i++){
+    for (int i=0; i < currentSize; i++){
         dataToSend[i] = response[i];
         responseSize--;
     }

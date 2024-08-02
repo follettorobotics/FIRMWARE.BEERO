@@ -5,7 +5,7 @@ bool MotorHandler::execute(){
     if (currentStep == 0){
         // if the relay brake exists, relay ON
         if (relayBrake != 0x00){
-            RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, true); 
+            RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, true, packet_number); 
             delete relayHandler;
         }
         startTime = micros();
@@ -28,7 +28,7 @@ bool MotorHandler::execute(){
                 // NOT sensor check 
                 if (currentStep == motorStep){
                     if (relayBrake != 0x00){
-                        RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
+                        RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false, packet_number); 
                         delete relayHandler;
                     }
                     return true; 
@@ -39,7 +39,7 @@ bool MotorHandler::execute(){
             // if the sensor check exists, it means addStep can exists. 
             if (motorAddStep == 0){
                 if (relayBrake != 0x00){
-                    RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false); 
+                    RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false, packet_number); 
                     delete relayHandler;
                 }
                 return true; 
@@ -77,6 +77,7 @@ size_t MotorHandler::response(byte* exMotorControlRsp){
     exMotorControlRsp[rspIndex++] = (currentStep >> 8) & 0xFF;
     exMotorControlRsp[rspIndex++] = sensor; 
     exMotorControlRsp[rspIndex++] = errorCheckSensor; 
+    exMotorControlRsp[rspIndex++] = packet_number;
     exMotorControlRsp[rspIndex++] = endByte;
 
     return rspIndex; 

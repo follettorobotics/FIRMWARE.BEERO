@@ -98,8 +98,11 @@ extern HX711 scales[NUM_LOADCELLS];
 class LoadcellSetup {
 private:
     int initial_step; 
+    uint8_t packet_number;
+
 public:
-    LoadcellSetup(){
+    LoadcellSetup(uint8_t packet_number): 
+    packet_number(packet_number){
         initial_step = 0; 
     }
     bool execute(); 
@@ -109,9 +112,10 @@ public:
 class LoadCellHandler {
 private:
     float loadcellValues[NUM_LOADCELLS];
+    uint8_t packet_number;
 
 public:
-    LoadCellHandler(){
+    LoadCellHandler(uint8_t packet_number): packet_number(packet_number){
         for (int i = 0; i < NUM_LOADCELLS; i++) {
             loadcellValues[i] = 0.0;
         }
