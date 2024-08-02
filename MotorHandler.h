@@ -73,12 +73,14 @@ private:
     unsigned int startTime; 
     unsigned int currentTime; 
 
+    uint8_t packet_number; 
+
 public:
 
     MotorHandler(int motorNumber, uint8_t motorDir, uint16_t motorStep, 
-        uint16_t motorAddStep, uint8_t relayBrake, uint8_t sensorLimit, uint8_t errorCheckSensorLimit):
+        uint16_t motorAddStep, uint8_t relayBrake, uint8_t sensorLimit, uint8_t errorCheckSensorLimit, uint8_t packet_number):
     motorNumber(motorNumber), motorDir(motorDir), motorStep(motorStep), 
-    motorAddStep(motorAddStep), relayBrake(relayBrake), sensorLimit(sensorLimit), errorCheckSensorLimit(errorCheckSensorLimit){
+    motorAddStep(motorAddStep), relayBrake(relayBrake), sensorLimit(sensorLimit), errorCheckSensorLimit(errorCheckSensorLimit), packet_number(packet_number){
 
         dirPin = exMotorPinAddress[motorNumber].DIR;
         pwmPin = exMotorPinAddress[motorNumber].PWM;

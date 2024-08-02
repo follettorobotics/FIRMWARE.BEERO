@@ -35,6 +35,7 @@ size_t LoadcellSetup::response(byte* loadcellSetupRsp){
 
     loadcellSetupRsp[index++] = startByte; 
     loadcellSetupRsp[index++] = loadcellReadRspCommand;
+    loadcellSetupRsp[index++] = packet_number; 
     loadcellSetupRsp[index++] = endByte;
     return index; 
 }
@@ -68,7 +69,7 @@ size_t LoadCellHandler::response(byte* loadcellRsp) {
             loadcellRsp[index++] = bytePointer[j];
         }
     }
-    
+    loadcellRsp[index++] = packet_number;
     loadcellRsp[index++] = endByte;
     return index; 
 }
