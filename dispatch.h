@@ -48,12 +48,12 @@
 #define nonExistErrorCommand        0xEA
 
 // Error code specific
-#define relayNumberErrorByte        0xD0
-#define motorNumberErrorByte        0xD1
-#define relayBrakeErrorByte         0xD2
-#define motorDirErrorByte           0xD4
-#define SensorLimitErrorByte        0xD5
-#define relayControlErrorByte       0xD6
+#define relayNumberErrorByte        0xF0
+#define motorNumberErrorByte        0xF1
+#define relayBrakeErrorByte         0xF2
+#define motorDirErrorByte           0xF4
+#define SensorLimitErrorByte        0xF5
+#define relayControlErrorByte       0xF6
 
 // motor direction
 #define doorDown                    0x00
