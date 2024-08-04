@@ -14,6 +14,8 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
     size_t index = 0; 
 
     uint8_t packet_number = request[requestSize -2]; 
+    // Serial.print("request packet number: "); 
+    // Serial.println(packet_number); 
 
     if (request[index] != startByte){
         // start byte error
@@ -239,16 +241,19 @@ size_t Dispatcher::dispatch(byte* request, size_t requestSize, byte* response){
         // Serial.println("Loadcell read"); 
         // read all the three loadcell
         LoadCellHandler* loadcellHandler = new LoadCellHandler(packet_number); 
+        // Serial.print("load cell read packet number: "); 
+        // Serial.println(packet_number);
         loadcellHandler->execute();
         responseIndex = loadcellHandler->response(response); 
     
         delete(loadcellHandler); 
 
-        // Serial.println("loadcell value response"); 
+        // Serial.println("loadcell value response to send"); 
         // for (int i=0; i<responseIndex; i++){
         //     Serial.print(response[i]);
         //     Serial.print(" "); 
         // }
+        // Serial.println(); 
 
         return responseIndex; 
     }else{

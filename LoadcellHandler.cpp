@@ -34,9 +34,10 @@ size_t LoadcellSetup::response(byte* loadcellSetupRsp){
     size_t index = 0;
 
     loadcellSetupRsp[index++] = startByte; 
-    loadcellSetupRsp[index++] = loadcellReadRspCommand;
+    loadcellSetupRsp[index++] = loadcellInitialRspCommand;
     loadcellSetupRsp[index++] = packet_number; 
     loadcellSetupRsp[index++] = endByte;
+    // Serial.println("laod cell initial long term");
     return index; 
 }
 
@@ -71,5 +72,9 @@ size_t LoadCellHandler::response(byte* loadcellRsp) {
     }
     loadcellRsp[index++] = packet_number;
     loadcellRsp[index++] = endByte;
+    // Serial.print("load cell handler response packet number: "); 
+    // Serial.println(packet_number); 
+    // Serial.print("load cell read response size: ");
+    // Serial.println(index); 
     return index; 
 }

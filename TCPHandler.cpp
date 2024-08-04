@@ -20,7 +20,7 @@ void TCPHandler::clientHandle(){
 
     if (newClient && !TCPclient.connected()){
         TCPclient = newClient;  // over-write TCPclient
-        Serial.println("tcp client disconnected and new client accept");
+        // Serial.println("tcp client disconnected and new client accept");
     }
 
     // parse the message logic 
@@ -32,7 +32,7 @@ void TCPHandler::clientHandle(){
     size_t dataToSendSize = deviceRsp.getResponse(dataToSend); 
 
     if (dataToSendSize != 0){
-        Serial.println("long term send"); 
+        // Serial.println("long term send"); 
         bool result = sendMessageToClient(dataToSend, dataToSendSize);
         if (!result){
             deviceRsp.appendResponse(dataToSend, dataToSendSize); 
@@ -74,6 +74,14 @@ void TCPHandler::messageHandle(){
             byte stuffedRsp[50];
             size_t sstuffedRspSize; 
             sstuffedRspSize = bitStuffing.applyBitStuffing(response, responseSize, stuffedRsp);
+
+            // Serial.println("stuffed response to send"); 
+            // for (int i=0; i<sstuffedRspSize; i++){
+            //     Serial.print(stuffedRsp[i]);
+            //     Serial.print(" ");
+            // }
+            // Serial.println(); 
+            
             sendMessageToClient(stuffedRsp, sstuffedRspSize); 
         }
     }
@@ -92,7 +100,7 @@ bool TCPHandler::sendMessageToClient(const byte* message, size_t size){
             return true; 
         }
         else{
-            Serial.println("tcp not available to send response message");
+            // Serial.println("tcp not available to send response message");
             return false; 
         }
     }
