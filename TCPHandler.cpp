@@ -73,15 +73,7 @@ void TCPHandler::messageHandle(){
         if (responseSize != 0){
             byte stuffedRsp[50];
             size_t sstuffedRspSize; 
-            sstuffedRspSize = bitStuffing.applyBitStuffing(response, responseSize, stuffedRsp);
-
-            // Serial.println("stuffed response to send"); 
-            // for (int i=0; i<sstuffedRspSize; i++){
-            //     Serial.print(stuffedRsp[i]);
-            //     Serial.print(" ");
-            // }
-            // Serial.println(); 
-            
+            sstuffedRspSize = bitStuffing.applyBitStuffing(response, responseSize, stuffedRsp);          
             sendMessageToClient(stuffedRsp, sstuffedRspSize); 
         }
     }
