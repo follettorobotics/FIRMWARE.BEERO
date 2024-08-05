@@ -22,19 +22,37 @@ void TCPHandler::clientHandle(){
         TCPclient = newClient;  // over-write TCPclient
         // Serial.println("tcp client disconnected and new client accept");
     }
-
+    
     // parse the message logic 
-    messageHandle(); 
+    byte stuffedRsp[30]; 
+    size_t stuffedRspSize = messageHandle(stuffedRsp); 
 
     // long-term message
     DeviceResponse& deviceRsp = DeviceResponse::getInstance(); 
     byte dataToSend[100]; 
     size_t dataToSendSize = deviceRsp.getResponse(dataToSend); 
 
-    if (dataToSendSize != 0){
-        // Serial.println("long term send"); 
-        bool result = sendMessageToClient(dataToSend, dataToSendSize);
-        if (!result){
+    // Combine immediate and long-term responses
+    byte combinedData[130]; // Buffer for combined responses
+    size_t combinedDataSize = 0;
+
+    // Copy immediate response
+    if (stuffedRspSize > 0) {
+        memcpy(combinedData, stuffedRsp, stuffedRspSize);
+        combinedDataSize += stuffedRspSize;
+    }
+
+    // Copy long-term response
+    if (dataToSendSize > 0) {
+        memcpy(combinedData + combinedDataSize, dataToSend, dataToSendSize);
+        combinedDataSize += dataToSendSize;
+    }
+
+    // Send combined data if there is any
+    if (combinedDataSize > 0) {
+        bool result = sendMessageToClient(combinedData, combinedDataSize);
+        if (!result && dataToSendSize > 0) {
+            // If failed to send and long-term data exists, append it back to device response
             deviceRsp.appendResponse(dataToSend, dataToSendSize); 
         }
     }
@@ -42,7 +60,7 @@ void TCPHandler::clientHandle(){
     return;
 }
 
-void TCPHandler::messageHandle(){
+size_t TCPHandler::messageHandle(byte *stuffedRsp){
     byte request[20];
     size_t requestSize = 0;
 
@@ -71,13 +89,13 @@ void TCPHandler::messageHandle(){
         responseSize = dispatch.dispatch(unStuffedReq, unStuffedReqSize, response);
 
         if (responseSize != 0){
-            byte stuffedRsp[50];
-            size_t sstuffedRspSize; 
-            sstuffedRspSize = bitStuffing.applyBitStuffing(response, responseSize, stuffedRsp);          
-            sendMessageToClient(stuffedRsp, sstuffedRspSize); 
+            size_t stuffedRspSize; 
+            stuffedRspSize = bitStuffing.applyBitStuffing(response, responseSize, stuffedRsp);          
+            // sendMessageToClient(stuffedRsp, sstuffedRspSize); 
+            return stuffedRspSize; 
         }
     }
-
+    return 0; 
 }
 
 bool TCPHandler::sendMessageToClient(const byte* message, size_t size){

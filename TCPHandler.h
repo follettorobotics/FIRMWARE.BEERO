@@ -23,7 +23,7 @@ public:
     static TCPHandler& getInstance();
     void begin(byte mac[], IPAddress ip);
     void clientHandle(); 
-    void messageHandle();
+    size_t messageHandle(byte *stuffedRsp);
     bool sendMessageToClient(const byte *message, size_t size);
 };
 
