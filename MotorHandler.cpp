@@ -20,41 +20,36 @@ bool MotorHandler::execute(){
 
     if (elapsedTime >= MOTOR_DELAY){
         // delay check 
-        if (sensorCheckRequire){
+        if (sensorCheckRequire && !sensor){
+            // // senor check needed but sensor OFF
+            // Serial.println("sensor read");
             if (getSensorLimitValue(sensorLimit)){
+                Serial.print("sensor on"); 
                 sensor = true; 
             }
-        }else{
-            // NOT sensor check 
-            if (currentStep == motorStep){
-                if (relayBrake != 0x00){
-                    RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false, packet_number); 
-                    delete relayHandler;
-                }
-                return true; 
-            }
-        }
-
-        if (sensor){
-            // if the sensor check exists, it means addStep can exists. 
+        }else if (sensorCheckRequire && sensor){
+            // senor check needed and sensor ON
+            // Serial.println("sensor on");
             if (motorAddStep == 0){
+                Serial.println("add done");
                 if (relayBrake != 0x00){
                     RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false, packet_number); 
                     delete relayHandler;
                 }
                 return true; 
             }else{
+                // Serial.println("add");
                 motorAddStep--; 
             }
         }else{
-            if (sensorCheckRequire){
-                if (currentStep == motorStep){
-                    if (relayBrake != 0x00){
-                        RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false, packet_number); 
-                        delete relayHandler;
-                    }
-                    return true;
+            // senor check not needed
+            // Serial.println("sensor not need");
+            if (currentStep == motorStep){
+                if (relayBrake != 0x00){
+                    RelayHandler* relayHandler = new RelayHandler(relayBrake, 0, false, packet_number); 
+                    delete relayHandler;
                 }
+                return true; 
             }
         }
 
@@ -68,11 +63,10 @@ bool MotorHandler::execute(){
 
 bool MotorHandler::getSensorLimitValue(uint8_t sensorLimitParameter){
     SensorHandler& sensorHandler = SensorHandler::getInstance();
-    // sensorHandler.execute(); 
+    // sensorHandler.execute();
     uint16_t sensorValue = sensorHandler.getSensorValue();
 
     bool isBit = (sensorValue >> sensorLimitParameter) & 1; 
-
     return isBit==1; 
 }
 
